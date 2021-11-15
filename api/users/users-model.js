@@ -12,7 +12,12 @@ async function insertUser(user) {
   return newUserObject // { user_id: 7, username: 'foo', password: 'xxxxxxx' }
 }
 
+function findBy(filter) {
+  return db('users').where(filter)
+}
+
 module.exports = {
     getAllUsers,
-    insertUser
+    insertUser,
+    findBy
 }
