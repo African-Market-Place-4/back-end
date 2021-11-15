@@ -7,12 +7,16 @@ router.post('/register', (req, res, next) => {
     const { username, password } = req.body
     const hash = bcrypt.hashSync(password, 8)
     
-    User.insert({ username, password: hash })
+    User.insertUser({ username, password: hash })
         .then(newUser => {
             res.status(201).json(newUser)
         })
         .catch(next)
     // res.json({ api: "register" })
+})
+
+router.post('/login', (req,res, next) => {
+    res.json('login route')
 })
 
 module.exports = router
