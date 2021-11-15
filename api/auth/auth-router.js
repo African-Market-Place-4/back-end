@@ -12,4 +12,7 @@ router.post('/register', (req, res, next) => {
             res.status(201).json(newUser)
         })
         .catch(next)
+    // res.json({ api: "register" })
 })
+
+module.exports = router
