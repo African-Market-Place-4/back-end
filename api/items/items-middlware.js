@@ -10,7 +10,7 @@ const validateItemId = async (req, res, next) => {
        }
 }
 
-const checkPayload = async (req, res, next) => {
+const checkItemPayload = async (req, res, next) => {
     const { 
         item_name,
         item_description,
@@ -26,5 +26,5 @@ const checkPayload = async (req, res, next) => {
 
 module.exports = {
     validateItemId,
-    checkPayload
+    checkItemPayload
 }
