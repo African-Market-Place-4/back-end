@@ -1,6 +1,6 @@
 const router = require('express').Router()
 const bcrypt = require('bcryptjs')
-const tokenBuilder = require('./token-builder') // eslint-disable-line
+const tokenBuilder = require('./token-builder') 
 const Users = require('../users/users-model')
 
 router.post('/register', (req, res, next) => {
