@@ -3,12 +3,11 @@ const Items = require('./items-model')
 const { validateItemId, checkItemPayload } = require('./items-middlware')
 
 router.get('/', (req, res, next) => { // eslint-disable-line
-    // Items.getAllItems()
-    //     .then(items => {
-    //         res.json(items)
-    //     })
-    //     .catch(next)
-    res.json('items')
+    Items.getAllItems()
+        .then(items => {
+            res.json(items)
+        })
+        .catch(next)
 })
 
 router.get('/:id', validateItemId, (req, res, next) => {
