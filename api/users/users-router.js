@@ -7,7 +7,6 @@ router.get('/', (req, res, next) => {
             res.json(users)
         })
         .catch(next)
-    //res.json({message: "from users router."})
 })
 
 
