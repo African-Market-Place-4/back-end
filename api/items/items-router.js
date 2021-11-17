@@ -5,7 +5,7 @@ const { validateItemId, checkItemPayload } = require('./items-middlware')
 router.get('/', (req, res, next) => { // eslint-disable-line
     Items.getAllItems()
         .then(items => {
-            res.json(items)
+            res.status(200).json(items)
         })
         .catch(next)
 })

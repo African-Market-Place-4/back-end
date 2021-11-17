@@ -1,15 +1,15 @@
 const db = require('../data/db-config')
 
 const  getAllItems = () => {
-    return db('items')
+    return db('products')
 }
 
-const getItemById = (id) => {
-    return db('items').where('item_id', id).first()
+const getItemById = (product_id) => {
+    return db('products').where('product_id', product_id).first()
 }
 
 const addItem = (item) => {
-    return db('items').insert(item, ['item_name', 'item_description', 'item_price', 'item_country'])
+    return db('products').insert(item, ['name', 'price_usd', 'description', 'seller'])
 }
 
 module.exports = {

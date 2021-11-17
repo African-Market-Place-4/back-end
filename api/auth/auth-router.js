@@ -2,8 +2,9 @@ const router = require('express').Router()
 const bcrypt = require('bcryptjs')
 const tokenBuilder = require('./token-builder') 
 const Users = require('../users/users-model')
+const { checkLoginBody, checkRegisterBody} = require("../users/users-middleware")
 
-router.post('/register', (req, res, next) => {
+router.post('/register',checkRegisterBody, (req, res, next) => {
     const { username, password } = req.body
     const hash = bcrypt.hashSync(password, 8)
     
@@ -15,7 +16,7 @@ router.post('/register', (req, res, next) => {
     // res.json({ api: "register" })
 })
 
-router.post('/login', (req, res, next) => {
+router.post('/login',checkLoginBody,  (req, res, next) => {
     const { username, password } = req.body
     Users.findBy({ username })
         .then(([user]) => {

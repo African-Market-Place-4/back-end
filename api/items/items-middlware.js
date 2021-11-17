@@ -12,12 +12,12 @@ const validateItemId = async (req, res, next) => {
 
 const checkItemPayload = async (req, res, next) => {
     const { 
-        item_name,
-        item_description,
-        item_price,
-        item_country,
+        name,
+        price_usd,
+        description,
+        seller,
     } = req.body
-    if (!item_name || !item_description || !item_price || !item_country) {
+    if (!name || !price_usd || !description || !seller) {
         res.status(401).json({ message: "All fields are required"})
     } else {
         next()
