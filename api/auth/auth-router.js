@@ -13,7 +13,6 @@ router.post('/register',checkRegisterBody, (req, res, next) => {
             res.status(201).json(newUser)
         })
         .catch(next)
-    // res.json({ api: "register" })
 })
 
 router.post('/login',checkLoginBody,  (req, res, next) => {
