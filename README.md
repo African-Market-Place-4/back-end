@@ -34,7 +34,7 @@
 
 
 # African Marketplace API Endpoints
-**API URL:**
+**API URL:** https://african-marketplace-4.herokuapp.com/
 1. **[POST]** /auth/register:
       - Input:
         {
